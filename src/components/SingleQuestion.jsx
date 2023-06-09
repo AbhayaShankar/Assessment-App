@@ -18,14 +18,17 @@ const SingleQuestion = () => {
   return (
     <div>
       <div key={currentQuestion.question}>
-        <h1>{currentQuestion.question}</h1>
+        <h1>
+          {" "}
+          Q{currentQuestionIndex + 1}. {currentQuestion.question}
+        </h1>
         <div style={{ display: "flex", gap: 15 }}>
           {currentQuestion.options.map((option) => (
             <Option key={option.name} optionText={option.name} />
           ))}
         </div>
       </div>
-
+      {currentQuestionIndex + 1} / {Assessment.questions.length}
       <div>
         <button
           onClick={handlePrevQuestion}

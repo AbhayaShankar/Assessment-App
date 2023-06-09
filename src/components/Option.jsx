@@ -1,5 +1,4 @@
-import Assessment from "../assessment.json";
-
+// eslint-disable-next-line react/prop-types
 const Option = ({ optionText }) => {
   return (
     <div>
@@ -8,6 +7,7 @@ const Option = ({ optionText }) => {
           border: "1px solid black",
           borderRadius: 6,
           padding: "6px 12px",
+          cursor: "pointer",
         }}
       >
         {optionText}
