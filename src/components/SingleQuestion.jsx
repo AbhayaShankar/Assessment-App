@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import Assessment from "../assessment.json";
 import Option from "./Option";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectAnswer } from "../actions/action";
 import store from "../store";
 
 const SingleQuestion = () => {
+  const [score, setScore] = useState(0);
   const dispatch = useDispatch();
+  const assessment = useSelector((state) => state.assessment);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const handleNextQuestion = () => {
@@ -24,8 +26,10 @@ const SingleQuestion = () => {
   };
 
   useEffect(() => {
-    console.log(store.getState());
-  }, []);
+    // console.log(store.getState());
+    console.log(assessment);
+    console.log(score);
+  }, [assessment]);
 
   return (
     <div>
@@ -38,7 +42,7 @@ const SingleQuestion = () => {
           {currentQuestion.options.map((option) => (
             <Option
               onChange={() =>
-                handleSelectAnswer(currentQuestion.question, option)
+                handleSelectAnswer(currentQuestion.question, option.name)
               }
               key={option.name}
               optionText={option.name}
@@ -60,6 +64,28 @@ const SingleQuestion = () => {
         >
           Next
         </button>
+      </div>
+      <div>{assessment.inProgress.toString()}</div>
+      <div>
+        {assessment?.selectedAnswers?.map((ans) => (
+          <>
+            <li>{ans.answer}</li>
+          </>
+        ))}
+      </div>
+      <div>{score}</div>
+      {/* Will have to figure this out */}
+      <div>
+        {assessment?.selectedAnswers?.map((selectedAnswer, index) => {
+          if (
+            Assessment.questions[index].question ===
+              selectedAnswer.questionId &&
+            Assessment.questions[index].answer === selectedAnswer.answer
+          ) {
+            setScore(score + 1);
+          }
+          return null;
+        })}
       </div>
     </div>
   );

@@ -14,7 +14,10 @@ export const startAssessment = () => {
 export const selectAnswer = (questionId, answer) => {
   return {
     type: "SELECT_ANSWER",
-    payload: { questionId, answer },
+    payload: {
+      questionId,
+      answer,
+    },
   };
 };
 
