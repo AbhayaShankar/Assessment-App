@@ -1,0 +1,32 @@
+@import "../css-config/mixins.scss";
+
+.single_question{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 25px 100px 25px 40px;
+    gap: 10px;
+    -webkit-box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
+    -moz-box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
+    box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
+    border-radius: 8px;
+    
+    .question_box{
+        display: flex;
+        // align-items: center;
+        flex-direction: column;
+        gap: 25px;
+        
+        h2{
+            color: #3aaf9f;
+        }
+        
+        .options{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}

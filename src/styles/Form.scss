@@ -10,8 +10,9 @@
     height: 100dvh;
     background-color: #3aaf9fee;
     
+    
     // border: 1px solid rgb(203, 67, 67);
-
+    
     .form_main{
         background-color: rgb(255, 255, 255);
         gap: 20px;
@@ -22,6 +23,7 @@
         border-radius: 8px;
         display: flex;
         align-items: center;
+        flex-direction: column;
         
         @include md{
             flex-direction: column;
@@ -43,14 +45,28 @@
                 gap: 10px;
                 align-items: center;
                 flex-direction: column;
-
+                
                 .form_field{
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    background-color: #eeeeee;
+                    align-items: center;
+                    padding: 5px 12px;
+                    border-radius: 8px;
 
                     
                     
-                    label{
-                        
+                    svg{
+                        width: 16px;
+                        height: 16px;
                     }
+
+                    .mail{
+                        width: 20px;
+                        height: 20px;
+                    }   
+                    
                     
                     input{
                         outline: none;
@@ -59,6 +75,19 @@
                         border: none;
                         background-color: #eeeeee;
                         
+                        &:-webkit-autofill,
+                        &:-webkit-autofill:hover,
+                        &:-webkit-autofill:focus {
+                            /* Set the desired background color for autofill */
+                            background-color: #eeeeee; /* Replace with your desired background color */
+                        }
+
+                        &::placeholder{
+                            font-size: 14px;
+                            color: #4f4f4fcf;
+                            letter-spacing: 1px;
+                        }
+                        
                     }
                 }
 
@@ -66,6 +95,12 @@
                     color: rgb(223, 74, 74);
                 }
                 
+            }
+
+            .prog_text{
+                color: #3aaf9f;
+                margin: 0 auto;
+                // margin-top: 15px;
             }
         }
     }

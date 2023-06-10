@@ -1,0 +1,20 @@
+@import "../css-config/mixins.scss";
+
+.questions_container{
+    background-color: #3aaf9f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    flex-direction: column;
+    padding: 20px 40px;
+
+    h1{
+        font-size: 40px;
+        text-transform: uppercase;
+        font-family: 'Gloock', serif; 
+        letter-spacing: 4px; 
+        margin-bottom: 50px;
+
+    }
+}

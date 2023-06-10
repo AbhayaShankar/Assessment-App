@@ -15,15 +15,15 @@ function App() {
   const assessment = useSelector((state) => state.assessment);
 
   return (
-    <>
+    <div>
       {user && assessment.inProgress ? (
-        <>
+        <div>
           <Questions />
-        </>
+        </div>
       ) : (
         <RegistrationForm />
       )}
-    </>
+    </div>
   );
 }
 

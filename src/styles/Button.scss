@@ -1,3 +1,5 @@
+@import "../css-config/mixins.scss";
+
 .Btn{
     width: fit-content;
     margin: 0 auto;
@@ -10,12 +12,17 @@
     font-weight: 500;
     font-size: 15px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
     -webkit-box-shadow: 2px 2px 15px 0px rgba(113,199,186,1);
     -moz-box-shadow: 2px 2px 15px 0px rgba(113,199,186,1);
     box-shadow: 2px 2px 15px 0px rgba(113,199,186,1);
-
+    
     &:hover{
         transform: scale(1.05);
     }
+}
+
+.Btn-disabled{
+    background-color: #3aaf9fb9;
+    
 }

@@ -3,6 +3,8 @@ import Assessment from "../assessment.json";
 import Option from "./Option";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAnswer } from "../actions/action";
+import "../styles/SingleQuestion.scss";
+import Button from "./Button";
 
 const SingleQuestion = () => {
   const [score, setScore] = useState(0);
@@ -46,47 +48,53 @@ const SingleQuestion = () => {
   }, [currentQuestionIndex]);
 
   return (
-    <div>
-      <div key={currentQuestion.question}>
-        <h1>
+    <div className="single_question">
+      <div className="question_box" key={currentQuestion.question}>
+        <h2>
           {" "}
           Q{currentQuestionIndex + 1}. {currentQuestion.question}
-        </h1>
-        <div style={{ display: "flex", gap: 15 }}>
+        </h2>
+        <div className="options">
           {currentQuestion.options.map((option) => (
             <Option
-              onChange={() =>
-                handleSelectAnswer(currentQuestion.question, option.name)
-              }
+              onClick={() => {
+                handleSelectAnswer(currentQuestion.question, option.name);
+                console.log("Hello");
+              }}
               key={option.name}
               optionText={option.name}
+              checked={assessment?.selectedAnswers?.some(
+                (selectedAnswer) =>
+                  selectedAnswer.questionId === currentQuestion.question &&
+                  selectedAnswer.answer === option.name
+              )}
             />
           ))}
         </div>
       </div>
       {currentQuestionIndex + 1} / {Assessment.questions.length}
-      <div>
-        <button
+      <div className="btns">
+        <Button
           onClick={handlePrevQuestion}
           disabled={currentQuestionIndex === 0}
-        >
-          Previous
-        </button>
-        <button
+          ButtonText={"Prev"}
+          className="Btn-disabled"
+        />
+        <Button
           onClick={handleNextQuestion}
           disabled={currentQuestionIndex === Assessment.questions.length - 1}
-        >
-          Next
-        </button>
+          ButtonText={"Next"}
+          className="Btn-disabled"
+        />
       </div>
-      <div>{assessment.inProgress.toString()}</div>
-      <div>
+      {/* <div>{assessment.inProgress.toString()}</div> */}
+      {/* <div>
         {assessment?.selectedAnswers?.map((ans) => (
           <>
             <li>{ans.answer}</li>
           </>
         ))}
-      </div>
+      </div> */}
       {/* Will have to figure this out --- DONE 🔥 */}
       <h1>{score}</h1>
     </div>

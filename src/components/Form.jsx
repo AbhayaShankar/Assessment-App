@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { registerUser, startAssessment } from "../actions/action";
 import "../styles/Form.scss";
 import Button from "./Button";
+import { FaUserAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 // eslint-disable-next-line react/prop-types
 const RegistrationForm = () => {
@@ -14,6 +16,9 @@ const RegistrationForm = () => {
   const [email, setEmail] = useState("");
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [startAssess, setStartAssess] = useState(false);
+  const [registerComplete, setRegisterComplete] = useState("");
+  const [assessmentComplete, setAssessmentComplete] = useState("");
 
   const assessment = useSelector((state) => state.assessment);
 
@@ -58,6 +63,9 @@ const RegistrationForm = () => {
     if (validateForm()) {
       // Registration logic here (e.g., dispatching Redux action)
       console.log(name, email);
+      setRegisterComplete("Congratulations!");
+      setStartAssess(true);
+      console.log(setRegisterComplete);
 
       dispatch(
         registerUser({
@@ -69,7 +77,10 @@ const RegistrationForm = () => {
   };
 
   const handleStartAssessment = () => {
-    dispatch(startAssessment());
+    setAssessmentComplete("Starting Assessment...");
+    setTimeout(() => {
+      dispatch(startAssessment());
+    }, 3000);
   };
 
   return (
@@ -79,9 +90,11 @@ const RegistrationForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="form_input">
             <div className="form_field">
-              <label htmlFor="name">Name:</label>
+              {/* <label htmlFor="name">Name:</label> */}
+              <FaUserAlt />
               <input
                 type="text"
+                placeholder="Name"
                 id="name"
                 value={name}
                 onChange={handleNameChange}
@@ -91,22 +104,33 @@ const RegistrationForm = () => {
           </div>
           <div className="form_input">
             <div className="form_field">
-              <label htmlFor="email">Email:</label>
+              {/* <label htmlFor="email">Email:</label> */}
+              <MdEmail className="mail" />
               <input
                 type="email"
                 id="email"
+                placeholder="Email"
                 value={email}
                 onChange={handleEmailChange}
               />
             </div>
             {emailError && <span>{emailError}</span>}
           </div>
-          <Button type="submit" ButtonText={"Register"} />
+          {startAssess ? (
+            <>
+              <Button
+                onClick={handleStartAssessment}
+                ButtonText={"Start Assessment"}
+              />
+              <div className="prog_text">{assessmentComplete}</div>
+            </>
+          ) : (
+            <>
+              <Button type="submit" ButtonText={"Register"} />
+              <div className="prog_text">{registerComplete}</div>
+            </>
+          )}
         </form>
-        <Button
-          onClick={handleStartAssessment}
-          ButtonText={"Start Assessment"}
-        />
       </div>
     </div>
   );

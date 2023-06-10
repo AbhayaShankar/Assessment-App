@@ -1,36 +1,24 @@
 // eslint-disable-next-line react/prop-types
-const Option = ({ optionText, onChange, checked }) => {
+const Option = ({ optionText, onClick, checked }) => {
   return (
     <div>
-      <label style={{ display: "flex", alignItems: "center", gap: 5 }}>
-        <input
-          type="radio"
-          name="options"
-          value={optionText}
-          onChange={onChange}
-          checked={checked}
-        />
+      <p
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 5,
+          border: "1px solid black",
+          padding: " 8px 20px",
+          borderRadius: 8,
+          cursor: "pointer",
+          background: checked ? "lightblue" : "white",
+        }}
+        onClick={onClick}
+      >
         {optionText}
-      </label>
+      </p>
     </div>
   );
 };
 
 export default Option;
-
-// const Option = ({ optionText, onChange, checked }) => {
-//   return (
-//     <div>
-//       <label style={{ display: "flex", alignItems: "center", gap: 5 }}>
-//         <input
-//           type="radio"
-//           name="options"
-//           value={optionText}
-//           onChange={onChange}
-//           checked={checked}
-//         />
-//         {optionText}
-//       </label>
-//     </div>
-//   );
-// };
