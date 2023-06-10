@@ -96,7 +96,7 @@ const SingleQuestion = () => {
         ))}
       </div> */}
       {/* Will have to figure this out --- DONE 🔥 */}
-      <h1>{score}</h1>
+      <h2>{score}</h2>
     </div>
   );
 };

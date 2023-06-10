@@ -77,10 +77,20 @@ const RegistrationForm = () => {
   };
 
   const handleStartAssessment = () => {
-    setAssessmentComplete("Starting Assessment...");
-    setTimeout(() => {
-      dispatch(startAssessment());
-    }, 3000);
+    let count = 3;
+    const timer = setInterval(() => {
+      if (count > 0) {
+        setAssessmentComplete("Starting Assessment in " + count.toString());
+        count--;
+      } else {
+        clearInterval(timer);
+        setAssessmentComplete("Go!"); // Update the message after the countdown
+        setTimeout(() => {
+          dispatch(startAssessment());
+        }, 1000); // Adjust the delay as needed
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
   };
 
   return (

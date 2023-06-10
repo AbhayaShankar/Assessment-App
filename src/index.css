@@ -10,4 +10,25 @@
 
 body {
   font-family: "Inconsolata", monospace;
+  overflow: hidden;
+}
+
+.blob1 {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  top: -50px;
+  left: -100px;
+  opacity: 0.65;
+  rotate: 15deg;
+}
+
+.blob2 {
+  position: absolute;
+  width: 380px;
+  height: auto;
+  bottom: -50px;
+  right: -130px;
+  opacity: 0.85;
+  rotate: 15deg;
 }

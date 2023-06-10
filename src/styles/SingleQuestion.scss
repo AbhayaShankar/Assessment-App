@@ -3,11 +3,12 @@
 .single_question{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     background-color: white;
-    padding: 25px 100px 25px 40px;
+    padding: 25px 40px 25px 40px;
     gap: 10px;
+    max-width: 800px;
     -webkit-box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
     -moz-box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
     box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
@@ -20,7 +21,11 @@
         gap: 25px;
         
         h2{
-            color: #3aaf9f;
+            color: #242424;
+            text-transform: uppercase;
+            font-family: 'Rampart One', cursive;
+            letter-spacing: 0.8px;
+            font-size: 24px;
         }
         
         .options{
@@ -28,5 +33,12 @@
             flex-direction: column;
             gap: 15px;
         }
+    }
+
+    .btns{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 20px;
     }
 }
