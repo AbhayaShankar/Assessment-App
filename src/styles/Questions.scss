@@ -21,5 +21,6 @@
         background-image: linear-gradient(to right, rgb(25, 25, 25), rgb(4, 4, 4));
         background-clip: text;
         -webkit-background-clip: text;
+        z-index: 5;
       }
 }

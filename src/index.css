@@ -18,7 +18,7 @@ body {
   width: 300px;
   height: auto;
   top: -50px;
-  left: -100px;
+  left: 400px;
   opacity: 0.65;
   rotate: 15deg;
 }
@@ -31,4 +31,24 @@ body {
   right: -130px;
   opacity: 0.85;
   rotate: 15deg;
+}
+
+.blob3 {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 50px;
+  right: 70px;
+  opacity: 0.55;
+  rotate: 65deg;
+}
+
+.blob4 {
+  position: absolute;
+  width: 240px;
+  height: auto;
+  bottom: 80px;
+  left: 100px;
+  opacity: 0.85;
+  rotate: 45deg;
 }
