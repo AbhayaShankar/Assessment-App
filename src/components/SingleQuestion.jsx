@@ -31,6 +31,21 @@ const SingleQuestion = () => {
     console.log(score);
   }, [assessment]);
 
+  useEffect(() => {
+    let newScore = 0;
+
+    assessment?.selectedAnswers?.forEach((selectedAnswer, index) => {
+      if (
+        Assessment.questions[index].question === selectedAnswer.questionId &&
+        Assessment.questions[index].answer === selectedAnswer.answer
+      ) {
+        newScore += 1;
+      }
+    });
+
+    setScore(newScore);
+  }, [currentQuestionIndex]);
+
   return (
     <div>
       <div key={currentQuestion.question}>
@@ -73,20 +88,8 @@ const SingleQuestion = () => {
           </>
         ))}
       </div>
-      <div>{score}</div>
-      {/* Will have to figure this out */}
-      <div>
-        {assessment?.selectedAnswers?.map((selectedAnswer, index) => {
-          if (
-            Assessment.questions[index].question ===
-              selectedAnswer.questionId &&
-            Assessment.questions[index].answer === selectedAnswer.answer
-          ) {
-            setScore(score + 1);
-          }
-          return null;
-        })}
-      </div>
+      {/* Will have to figure this out --- DONE 🔥 */}
+      <h1>{score}</h1>
     </div>
   );
 };
