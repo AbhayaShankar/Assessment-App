@@ -19,7 +19,7 @@
         -webkit-box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
         -moz-box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
         box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
-        padding: 50px 30px;
+        padding: 50px 20px 30px;
         border-radius: 8px;
         display: flex;
         align-items: center;
@@ -27,12 +27,22 @@
         z-index: 5;
         
         @include md{
+            padding: 50px 30px;
+            
+        }
+        
+        @include md{
             flex-direction: column;
         }
         
         h1{
-            font-size: 36px;
+            font-size: 30px;
             color: #3aaf9f;
+            
+            @include md{
+                font-size: 36px;
+
+            }
         }
         
         form{

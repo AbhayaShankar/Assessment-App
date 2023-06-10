@@ -11,16 +11,22 @@
   
 
     h1 {
-        font-size: 54px;
+        font-size: 34px;
         text-transform: uppercase;
         font-family: 'Rampart One', cursive;
         letter-spacing: 4px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         color: black;
         -webkit-text-fill-color: transparent;
         background-image: linear-gradient(to right, rgb(25, 25, 25), rgb(4, 4, 4));
         background-clip: text;
         -webkit-background-clip: text;
         z-index: 5;
+        
+        @include md{
+          font-size: 54px;
+          margin-bottom: 50px;
+
+        }
       }
 }

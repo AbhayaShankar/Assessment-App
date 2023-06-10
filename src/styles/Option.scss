@@ -12,6 +12,12 @@
         border-radius: 8px;
         cursor: pointer;
         font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        
+        @include md{
+            font-size: 18px;
+        }
         
         &:hover{
             background-color: #3aaf9f76;
@@ -22,7 +28,7 @@
         padding: 8px 20px;
         border-radius: 8px;
         cursor: pointer;
-        font-weight: 500;
+        font-weight: 600;
        background-color: #3aaf9fb9;
     }
 

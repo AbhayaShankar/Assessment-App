@@ -7,7 +7,6 @@ import "../styles/SingleQuestion.scss";
 import Button from "./Button";
 
 const SingleQuestion = () => {
-  const [score, setScore] = useState(0);
   const dispatch = useDispatch();
   const assessment = useSelector((state) => state.assessment);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -29,23 +28,7 @@ const SingleQuestion = () => {
   useEffect(() => {
     // console.log(store.getState());
     console.log(assessment);
-    console.log(score);
   }, [assessment]);
-
-  useEffect(() => {
-    let newScore = 0;
-
-    assessment?.selectedAnswers?.forEach((selectedAnswer, index) => {
-      if (
-        Assessment.questions[index].question === selectedAnswer.questionId &&
-        Assessment.questions[index].answer === selectedAnswer.answer
-      ) {
-        newScore += 1;
-      }
-    });
-
-    setScore(newScore);
-  }, [currentQuestionIndex]);
 
   return (
     <div className="single_question">
@@ -96,7 +79,6 @@ const SingleQuestion = () => {
         ))}
       </div> */}
       {/* Will have to figure this out --- DONE 🔥 */}
-      <h2>{score}</h2>
     </div>
   );
 };

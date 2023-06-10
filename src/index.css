@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&family=Cutive&family=Genos:wght@400;600&family=Gloock&family=Inconsolata:wght@300;400&family=Inter&family=Montserrat:wght@400;700;900&family=Poppins:wght@400;600;800&family=Rampart+One&family=Rubik+Glitch&family=Sacramento&family=Space+Mono:wght@400;700&display=swap");
+@import "./css-config/mixins.scss";
 
 *,
 ::before,
@@ -13,42 +14,55 @@ body {
   overflow: hidden;
 }
 
-.blob1 {
-  position: absolute;
-  width: 300px;
-  height: auto;
-  top: -50px;
-  left: 400px;
-  opacity: 0.65;
-  rotate: 15deg;
-}
-
-.blob2 {
-  position: absolute;
-  width: 380px;
-  height: auto;
-  bottom: -50px;
-  right: -130px;
-  opacity: 0.85;
-  rotate: 15deg;
-}
-
-.blob3 {
-  position: absolute;
-  width: 200px;
-  height: auto;
-  top: 50px;
-  right: 70px;
-  opacity: 0.55;
-  rotate: 65deg;
-}
-
+.blob1,
+.blob2,
+.blob3,
 .blob4 {
-  position: absolute;
-  width: 240px;
-  height: auto;
-  bottom: 80px;
-  left: 100px;
-  opacity: 0.85;
-  rotate: 45deg;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .blob1 {
+    display: flex;
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: -50px;
+    left: 400px;
+    opacity: 0.65;
+    rotate: 15deg;
+  }
+
+  .blob2 {
+    display: flex;
+    position: absolute;
+    width: 380px;
+    height: auto;
+    bottom: -50px;
+    right: -130px;
+    opacity: 0.85;
+    rotate: 15deg;
+  }
+
+  .blob3 {
+    display: flex;
+    position: absolute;
+    width: 220px;
+    height: auto;
+    top: 0px;
+    right: 210px;
+    opacity: 0.55;
+    rotate: 15deg;
+  }
+
+  .blob4 {
+    display: flex;
+    position: absolute;
+    width: 240px;
+    height: auto;
+    bottom: 0px;
+    left: 100px;
+    opacity: 0.75;
+    rotate: 95deg;
+  }
 }
