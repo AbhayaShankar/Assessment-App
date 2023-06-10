@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Assessment from "../assessment.json";
 import Option from "./Option";
+import { useDispatch } from "react-redux";
+import { selectAnswer } from "../actions/action";
+import store from "../store";
 
 const SingleQuestion = () => {
+  const dispatch = useDispatch();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const handleNextQuestion = () => {
@@ -15,6 +19,14 @@ const SingleQuestion = () => {
 
   const currentQuestion = Assessment.questions[currentQuestionIndex];
 
+  const handleSelectAnswer = (questionId, answer) => {
+    dispatch(selectAnswer(questionId, answer));
+  };
+
+  useEffect(() => {
+    console.log(store.getState());
+  }, []);
+
   return (
     <div>
       <div key={currentQuestion.question}>
@@ -24,7 +36,13 @@ const SingleQuestion = () => {
         </h1>
         <div style={{ display: "flex", gap: 15 }}>
           {currentQuestion.options.map((option) => (
-            <Option key={option.name} optionText={option.name} />
+            <Option
+              onChange={() =>
+                handleSelectAnswer(currentQuestion.question, option)
+              }
+              key={option.name}
+              optionText={option.name}
+            />
           ))}
         </div>
       </div>

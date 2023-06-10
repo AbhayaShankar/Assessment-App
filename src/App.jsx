@@ -18,10 +18,10 @@ function App() {
 
   return (
     <>
-      {user && assessment.inProgress ? (
+      {/* Change from ! */}
+      {!user && !assessment.inProgress ? (
         <>
           <Questions />
-          <SingleQuestion />
         </>
       ) : (
         <RegistrationForm />
