@@ -1,0 +1,72 @@
+@import "../css-config/mixins.scss";
+
+.form_container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100dvh;
+    background-color: #3aaf9fee;
+    
+    // border: 1px solid rgb(203, 67, 67);
+
+    .form_main{
+        background-color: rgb(255, 255, 255);
+        gap: 20px;
+        -webkit-box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
+        -moz-box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
+        box-shadow: 5px 5px 10px 1px rgba(33,33,33,1);
+        padding: 50px 30px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        
+        @include md{
+            flex-direction: column;
+        }
+        
+        h1{
+            font-size: 36px;
+            color: #3aaf9f;
+        }
+        
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            
+            
+            .form_input{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                flex-direction: column;
+
+                .form_field{
+
+                    
+                    
+                    label{
+                        
+                    }
+                    
+                    input{
+                        outline: none;
+                        width: 250px;
+                        padding: 5px 8px;
+                        border: none;
+                        background-color: #eeeeee;
+                        
+                    }
+                }
+
+                span{
+                    color: rgb(223, 74, 74);
+                }
+                
+            }
+        }
+    }
+}

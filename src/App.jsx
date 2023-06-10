@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
 import RegistrationForm from "./components/Form";
 import Questions from "./components/Questions";
-import SingleQuestion from "./components/SingleQuestion";
 import Summary from "./components/Summary";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -18,15 +16,13 @@ function App() {
 
   return (
     <>
-      {/* Change from ! */}
-      {!user && !assessment.inProgress ? (
+      {user && assessment.inProgress ? (
         <>
           <Questions />
         </>
       ) : (
         <RegistrationForm />
       )}
-      <Summary />
     </>
   );
 }

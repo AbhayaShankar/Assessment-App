@@ -4,6 +4,8 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { registerUser, startAssessment } from "../actions/action";
+import "../styles/Form.scss";
+import Button from "./Button";
 
 // eslint-disable-next-line react/prop-types
 const RegistrationForm = () => {
@@ -71,32 +73,41 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
-      <h1>User Registration</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={handleNameChange}
-          />
-          {nameError && <span>{nameError}</span>}
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-          {emailError && <span>{emailError}</span>}
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      <button onClick={handleStartAssessment}>Start Assessment</button>
+    <div className="form_container">
+      <div className="form_main">
+        <h1>Register Here</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form_input">
+            <div className="form_field">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={handleNameChange}
+              />
+            </div>
+            {nameError && <span>{nameError}</span>}
+          </div>
+          <div className="form_input">
+            <div className="form_field">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={handleEmailChange}
+              />
+            </div>
+            {emailError && <span>{emailError}</span>}
+          </div>
+          <Button type="submit" ButtonText={"Register"} />
+        </form>
+        <Button
+          onClick={handleStartAssessment}
+          ButtonText={"Start Assessment"}
+        />
+      </div>
     </div>
   );
 };

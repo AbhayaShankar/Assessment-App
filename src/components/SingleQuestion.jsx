@@ -3,7 +3,6 @@ import Assessment from "../assessment.json";
 import Option from "./Option";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAnswer } from "../actions/action";
-import store from "../store";
 
 const SingleQuestion = () => {
   const [score, setScore] = useState(0);
