@@ -1,21 +1,30 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
-import Button from "./components/Button";
 import RegistrationForm from "./components/Form";
 import Questions from "./components/Questions";
 import SingleQuestion from "./components/SingleQuestion";
 import Summary from "./components/Summary";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  registerUser,
+  startAssessment,
+  selectAnswer,
+  submitAssessment,
+} from "./actions/action";
 
 function App() {
-  const [isUserRegistered, setIsUserRegistered] = useState(true);
+  const user = useSelector((state) => state.user);
+  const assessment = useSelector((state) => state.assessment);
+
   return (
     <>
-      {isUserRegistered ? (
+      {user && assessment.inProgress ? (
         <>
           <Questions />
           <SingleQuestion />
         </>
       ) : (
-        <RegistrationForm setIsUserRegistered={setIsUserRegistered} />
+        <RegistrationForm />
       )}
       <Summary />
     </>
