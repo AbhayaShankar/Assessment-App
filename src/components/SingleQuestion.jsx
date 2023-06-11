@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Assessment from "../assessment.json";
 import Option from "./Option";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,11 +24,6 @@ const SingleQuestion = () => {
   const handleSelectAnswer = (questionId, answer) => {
     dispatch(selectAnswer(questionId, answer));
   };
-
-  useEffect(() => {
-    // console.log(store.getState());
-    console.log(assessment);
-  }, [assessment]);
 
   return (
     <div className="single_question">
@@ -72,15 +67,6 @@ const SingleQuestion = () => {
           className="Btn-disabled"
         />
       </div>
-      {/* <div>{assessment.inProgress.toString()}</div> */}
-      {/* <div>
-        {assessment?.selectedAnswers?.map((ans) => (
-          <>
-            <li>{ans.answer}</li>
-          </>
-        ))}
-      </div> */}
-      {/* Will have to figure this out --- DONE 🔥 */}
     </div>
   );
 };

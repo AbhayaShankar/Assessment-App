@@ -61,7 +61,7 @@ const Summary = () => {
 
   return (
     <div className="summary_container">
-      {/* <Confetti width={width} height={height} /> */}
+      <Confetti width={width} height={height} />
       <h1>Hi {user.name}...</h1>
       <h2>
         Congratulations on completing the Assessment <br />

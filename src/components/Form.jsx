@@ -61,7 +61,7 @@ const RegistrationForm = () => {
     console.log(assessment.inProgress);
 
     if (validateForm()) {
-      // Registration logic here (e.g., dispatching Redux action)
+      // Registration logic here (dispatching Redux action)
       console.log(name, email);
       setRegisterComplete("Congratulations!");
       setStartAssess(true);
@@ -84,10 +84,10 @@ const RegistrationForm = () => {
         count--;
       } else {
         clearInterval(timer);
-        setAssessmentComplete("Go!"); // Update the message after the countdown
+        setAssessmentComplete("Go!");
         setTimeout(() => {
           dispatch(startAssessment());
-        }, 1000); // Adjust the delay as needed
+        }, 1000);
       }
     }, 1000);
     return () => clearTimeout(timer);
@@ -100,7 +100,6 @@ const RegistrationForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="form_input">
             <div className="form_field">
-              {/* <label htmlFor="name">Name:</label> */}
               <FaUserAlt />
               <input
                 type="text"
@@ -114,7 +113,6 @@ const RegistrationForm = () => {
           </div>
           <div className="form_input">
             <div className="form_field">
-              {/* <label htmlFor="email">Email:</label> */}
               <MdEmail className="mail" />
               <input
                 type="email"
