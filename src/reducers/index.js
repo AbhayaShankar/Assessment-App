@@ -5,7 +5,7 @@ const initialState = {
   user: null,
   assessment: {
     inProgress: false,
-    selectedAnswers: [], // Object to store selected answers for each question
+    selectedAnswers: [],
   },
 };
 

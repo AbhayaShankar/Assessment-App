@@ -57,15 +57,11 @@ const RegistrationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(assessment);
-    console.log(assessment.inProgress);
 
     if (validateForm()) {
       // Registration logic here (dispatching Redux action)
-      console.log(name, email);
       setRegisterComplete("Congratulations!");
       setStartAssess(true);
-      console.log(setRegisterComplete);
 
       dispatch(
         registerUser({

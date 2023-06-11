@@ -37,7 +37,6 @@ const SingleQuestion = () => {
             <Option
               onClick={() => {
                 handleSelectAnswer(currentQuestion.question, option.name);
-                console.log("Hello");
               }}
               key={option.name}
               optionText={option.name}

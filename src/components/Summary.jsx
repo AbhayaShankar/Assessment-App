@@ -13,6 +13,7 @@ const Summary = () => {
   const [stats, setStats] = useState(false);
   const [responses, setResponses] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [confetti, setConfetti] = useState(true);
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
@@ -59,9 +60,17 @@ const Summary = () => {
     setStats(false);
   };
 
+  useEffect(() => {
+    const confettiTimer = setTimeout(() => {
+      setConfetti(false);
+    }, 6000);
+
+    return () => clearTimeout(confettiTimer);
+  }, []);
+
   return (
     <div className="summary_container">
-      <Confetti width={width} height={height} />
+      {confetti && <Confetti width={width} height={height} />}
       <h1>Hi {user.name}...</h1>
       <h2>
         Congratulations on completing the Assessment <br />
