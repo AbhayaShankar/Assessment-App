@@ -7,6 +7,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 40px;
+    overflow-y: scroll;
+    
     
     h1{
         margin-bottom: 0;
@@ -33,6 +35,38 @@
         @include md{
             flex-direction: row;
         }
+    }
+
+    .question_box{
+        display: flex;
+        // align-items: center;
+        flex-direction: column;
+        gap: 25px;
+        
+        h2{
+            color: #242424;
+            text-transform: uppercase;
+            font-family: 'Rampart One', cursive;
+            letter-spacing: 0.8px;
+            font-size: 16px;
+            
+            @include md{
+                font-size: 24px;
+                
+            }
+        }
+        
+        .options{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    .btns{
+        display: flex;
+        align-items: center;
+        gap: 30px;
     }
 
 
@@ -69,6 +103,10 @@
         25% { transform: scaleY( 1 ); }
     }
 }
+
+.summary_container::-webkit-scrollbar{
+  display: none;  
+} 
 
 [data-size="0"] {
     --size: calc(1 / 25);

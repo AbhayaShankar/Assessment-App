@@ -51,6 +51,8 @@ const SingleQuestion = () => {
                   selectedAnswer.questionId === currentQuestion.question &&
                   selectedAnswer.answer === option.name
               )}
+              isCorrect={option.isCorrect}
+              finalResponse={false}
             />
           ))}
         </div>

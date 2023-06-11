@@ -128,6 +128,8 @@ const Summary = () => {
                       selectedAnswer.questionId === currentQuestion.question &&
                       selectedAnswer.answer === option.name
                   )}
+                  finalResponse={true}
+                  isCorrect={option.isCorrect}
                 />
               ))}
             </div>
