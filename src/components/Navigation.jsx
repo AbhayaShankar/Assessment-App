@@ -7,7 +7,6 @@ const Navigation = () => {
 
   return (
     <div>
-      Abhaya
       {Assessment.questions.map((quest, index) => {
         <>{index}</>;
       })}

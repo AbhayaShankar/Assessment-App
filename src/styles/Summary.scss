@@ -1,0 +1,170 @@
+@import "../css-config/mixins.scss";
+
+.summary_container{
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    
+    h1{
+        margin-bottom: 0;
+    }
+
+    h2{
+        line-height: 32px;
+        text-align: center;
+        font-size: 24px;
+
+        span{
+            background-color: aliceblue;
+            padding: 2px 4px;
+            border-radius: 8px;
+        }
+    }
+
+    .stats_btn{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-direction: column;
+
+        @include md{
+            flex-direction: row;
+        }
+    }
+
+
+    #animations {
+        height: 200px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    #animations tbody th{
+        letter-spacing: 1px;
+    }
+
+    #animations tbody td {
+        transform-origin: bottom;
+        animation: revealing-bars 4s linear ;
+        margin-inline-start: 10px;
+        margin-inline-end: 20px;
+        box-shadow:
+          1px -1px 1px #3aaf9fb9,
+          2px -2px 1px #3aaf9fb9,
+          3px -3px 1px #3aaf9fb9,
+          4px -4px 1px #3aaf9fb9,
+          5px -5px 1px #3aaf9fb9,
+          6px -6px 1px #3aaf9fb9,
+          7px -7px 1px #3aaf9fb9,
+          8px -8px 1px #3aaf9fb9,
+          9px -9px 1px #3aaf9fb9,
+          10px -10px 1px #3aaf9fb9;
+      
+    }
+    @keyframes revealing-bars {
+        0%  { transform: scaleY( 0 ); }
+        25% { transform: scaleY( 1 ); }
+    }
+}
+
+[data-size="0"] {
+    --size: calc(1 / 25);
+  }
+  
+  [data-size="1"] {
+    --size: calc(2 / 25);
+  }
+  
+  [data-size="2"] {
+    --size: calc(3 / 25);
+  }
+  
+  [data-size="3"] {
+    --size: calc(4 / 25);
+  }
+  [data-size="4"] {
+    --size: calc(5 / 25);
+  }
+  
+  [data-size="5"] {
+    --size: calc(6 / 25);
+  }
+  
+  [data-size="6"] {
+    --size: calc(7 / 25);
+  }
+  [data-size="7"] {
+    --size: calc(8 / 25);
+  }
+  
+  [data-size="8"] {
+    --size: calc(9 / 25);
+  }
+  
+  [data-size="9"] {
+    --size: calc(10 / 25);
+  }
+  [data-size="10"] {
+    --size: calc(11 / 25);
+  }
+  
+  [data-size="11"] {
+    --size: calc(12 / 25);
+  }
+  
+  [data-size="12"] {
+    --size: calc(13 / 25);
+  }
+  [data-size="13"] {
+    --size: calc(14 / 25);
+  }
+  
+  [data-size="14"] {
+    --size: calc(15 / 25); 
+ }
+  
+  [data-size="15"] {
+    --size: calc(16 / 25); 
+ }
+  [data-size="16"] {
+    --size: calc(17 / 25);  
+ }
+  
+  [data-size="17"] {
+    --size: calc(18 / 25);  
+ }
+  
+  [data-size="18"] {
+    --size: calc(19 / 25);
+  }
+
+  [data-size="19"] {
+    --size: calc(20 / 25);
+  }
+
+  [data-size="20"] {
+    --size: calc(21 / 25);
+  }
+  
+  [data-size="21"] {
+    --size: calc(22 / 25);
+  }
+  
+  [data-size="22"] {
+    --size: calc(23 / 25);
+  }
+
+  [data-size="23"] {
+    --size: calc(24 / 25);
+  }
+
+  [data-size="24"] {
+    --size: calc(25 / 25);
+  }
+  
+  [data-size="25"] {
+    --size: calc(26 / 25);
+  }

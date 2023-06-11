@@ -7,6 +7,7 @@ import blob2 from "./assets/blob2.png";
 import blob3 from "./assets/blob3.png";
 import blob4 from "./assets/blob4.png";
 import Navigation from "./components/Navigation";
+import "charts.css";
 
 function App() {
   const user = useSelector((state) => state.user);
